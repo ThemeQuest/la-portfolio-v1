@@ -4,11 +4,14 @@ import Image from 'next/image';
 import client from '../services/apolloClient';
 import gql from 'graphql-tag';
 import DOMPurify from 'isomorphic-dompurify';
+import Navbar from './components/Navbar';
 
 export default function Home({projects}) {
   console.log(projects);
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <>
+      <Navbar/>
+      <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
         <title>La Portfolio v1</title>
         <link rel="icon" href="/favicon.ico" />
@@ -41,6 +44,7 @@ export default function Home({projects}) {
         </Link>
       </footer>
     </div>
+    </>
   )
 }
 
